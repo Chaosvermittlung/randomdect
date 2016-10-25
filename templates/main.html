@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Dect</title>
+</head>
+<body>
+    {{.ErrormsgHTML}}
+	<form role="form-horizontal" class="form-inline" action="/recieve" method="post" enctype="multipart/form-data">
+  	<label for="file">Select file to upload:</label>
+		<input type="file" name="file" id="file" class="f3">	
+  	<input type="submit" value="Upload file" name="submit" class="up">
+	</form>
+    <label for="Extension">Random Extension:</label>
+    <input type="text" name="Extension" value="{{.Extension}}">
+    <label for="Name">Name:</label>
+    <input type="text" name="Name" value="{{.Name}}">
+    <label for="Name">Called:</label>
+    <input type="text" name="Called" value="{{.Called}}">
+    <form role="form-horizontal" class="form-inline" action="/set" method="post">
+        <button type="submit" name="action" value="called">Called</button>
+        <button type="submit" name="action" value="optout">Optout</button>
+        <button type="submit" name="action" value="delete">Delete</button>
+        <input type="hidden" name="extension" value={{.Extension}}>    
+    </form>
+</body>
